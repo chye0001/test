@@ -1,6 +1,6 @@
-package ccy.kapsejlaldsbackend.sejlbåd.dto;
+package ccy.kapsejlaldsbackend.sejlbåde.dto;
 
-import ccy.kapsejlaldsbackend.sejlbåd.Sejlbåd;
+import ccy.kapsejlaldsbackend.sejlbåde.Sejlbåd;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,9 +15,9 @@ public class SejlbådMapper {
     }
 
     public Sejlbåd toSejlbåd(SejlbådRequest sejlbådRequest) {
-        return Sejlbåd.builder()
-                .name(sejlbådRequest.name())
-                .bådType(sejlbådRequest.bådType())
-                .build();
+        return new Sejlbåd(
+                sejlbådRequest.name(),
+                sejlbådRequest.bådType()
+        );
     }
 }

@@ -1,6 +1,6 @@
-package ccy.kapsejlaldsbackend.sejlbåd.dto;
+package ccy.kapsejlaldsbackend.sejlbåde.dto;
 
-import ccy.kapsejlaldsbackend.sejlbåd.BådType;
+import ccy.kapsejlaldsbackend.sejlbåde.BådType;
 
 public record SejlbådResponse(
         long id,

@@ -1,17 +1,19 @@
-package ccy.kapsejlaldsbackend.sejlbåd;
+package ccy.kapsejlaldsbackend.sejlbåde;
 
-import ccy.kapsejlaldsbackend.sejlbåd.dto.SejlbådMapper;
-import ccy.kapsejlaldsbackend.sejlbåd.dto.SejlbådRequest;
-import ccy.kapsejlaldsbackend.sejlbåd.dto.SejlbådResponse;
+import ccy.kapsejlaldsbackend.sejlbåde.dto.SejlbådMapper;
+import ccy.kapsejlaldsbackend.sejlbåde.dto.SejlbådRequest;
+import ccy.kapsejlaldsbackend.sejlbåde.dto.SejlbådResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class SejlbådServiceImpl implements SejlbådService {
 
-    private SejlbådRepository sejlbRepository;
-    private SejlbådMapper sejlbådMapper;
+    private final SejlbådRepository sejlbRepository;
+    private final SejlbådMapper sejlbådMapper;
 
 
     @Override

@@ -1,8 +1,8 @@
-package ccy.kapsejlaldsbackend.sejlbåd;
+package ccy.kapsejlaldsbackend.sejlbåde;
 
 import ccy.kapsejlaldsbackend.exceptions.SejlbådNotFound;
-import ccy.kapsejlaldsbackend.sejlbåd.dto.SejlbådRequest;
-import ccy.kapsejlaldsbackend.sejlbåd.dto.SejlbådResponse;
+import ccy.kapsejlaldsbackend.sejlbåde.dto.SejlbådRequest;
+import ccy.kapsejlaldsbackend.sejlbåde.dto.SejlbådResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/sejlbåde")
-@RequiredArgsConstructor
 public class SejlbådController {
 
-    private SejlbådService service;
+    private final SejlbådService service;
+
+    public SejlbådController(SejlbådService service) {
+        this.service = service;
+    }
 
 
     @GetMapping

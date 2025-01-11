@@ -1,4 +1,4 @@
-package ccy.kapsejlaldsbackend.sejlbåd;
+package ccy.kapsejlaldsbackend.sejlbåde;
 
 public enum BådType {
 
