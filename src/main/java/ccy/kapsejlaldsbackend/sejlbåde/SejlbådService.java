@@ -10,7 +10,6 @@ public interface SejlbådService {
     List<SejlbådResponse> getAllSejlbåd();
     SejlbådResponse getSejlbådById(Long id);
     SejlbådResponse createSejlbåd(SejlbådRequest postRequest);
-    SejlbådResponse updateSejlbåd(SejlbådRequest putRequest);
+    SejlbådResponse updateSejlbåd(long id, SejlbådRequest putRequest);
     void deleteSejlbåd(long id);
-    boolean doesExist(long id);
 }

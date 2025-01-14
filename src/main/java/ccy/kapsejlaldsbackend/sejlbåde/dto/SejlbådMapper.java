@@ -10,14 +10,16 @@ public class SejlbådMapper {
         return new SejlbådResponse(
                 sejlbåd.getId(),
                 sejlbåd.getName(),
-                sejlbåd.getBådType()
+                sejlbåd.getBådType(),
+                sejlbåd.getPoints()
         );
     }
 
     public Sejlbåd toSejlbåd(SejlbådRequest sejlbådRequest) {
         return new Sejlbåd(
                 sejlbådRequest.name(),
-                sejlbådRequest.bådType()
+                sejlbådRequest.bådType(),
+                sejlbådRequest.point()
         );
     }
 }

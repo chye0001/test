@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1/sejlbåde")
 public class SejlbådController {
@@ -33,7 +34,6 @@ public class SejlbådController {
     }
 
 
-
     @PostMapping
     public ResponseEntity<SejlbådResponse> createSejlbåd(@RequestBody SejlbådRequest postRequest) {
         SejlbådResponse createdSejlbåd = service.createSejlbåd(postRequest);
@@ -41,31 +41,17 @@ public class SejlbådController {
     }
 
 
-
     @PutMapping("/{id}")
     public ResponseEntity<SejlbådResponse> updateSejlbåd(@PathVariable long id, @RequestBody SejlbådRequest putRequest) {
-
-        boolean doesExist = service.doesExist(id);
-        if (!doesExist) {
-            throw new RuntimeException("Kunne ikke finde sejlbåd i database");
-        }
-
-        SejlbådResponse updatedSejlbpd = service.updateSejlbåd(putRequest);
+        System.out.println("UPDATED SEJLBÅD IN CONTROLLER " + putRequest);
+        SejlbådResponse updatedSejlbpd = service.updateSejlbåd(id, putRequest);
         return ResponseEntity.ok(updatedSejlbpd);
     }
 
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteSejlbåd(@PathVariable long id) {
-
-        boolean doesExist = service.doesExist(id);
-        if (doesExist) {
-            service.deleteSejlbåd(id);
-            return ResponseEntity.noContent().build();
-
-        } else {
-            throw new SejlbådNotFound("Kunne ikke finde sejlbåd i database");
-        }
+        service.deleteSejlbåd(id);
+        return ResponseEntity.noContent().build();
     }
 }

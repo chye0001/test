@@ -5,6 +5,7 @@ import ccy.kapsejlaldsbackend.sejlbåde.BådType;
 public record SejlbådResponse(
         long id,
         String name,
-        BådType bådType
+        BådType bådType,
+        int point
 ) {
 }

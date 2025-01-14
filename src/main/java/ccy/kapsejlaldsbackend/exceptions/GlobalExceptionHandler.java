@@ -13,4 +13,10 @@ public class GlobalExceptionHandler {
         Error error = new Error(HttpStatus.NOT_FOUND.value(), exception.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
+
+    @ExceptionHandler(KapsejladsNotFound.class)
+    public ResponseEntity<Error> handleKapsejladsNotFoundException(KapsejladsNotFound exception) {
+        Error error = new Error(HttpStatus.NOT_FOUND.value(), exception.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
 }
